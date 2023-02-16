@@ -1,12 +1,8 @@
 import "./style.css";
 
-const points = [
-    "poop"
-    "pee"
-]; 
+const points = [];
 
-
-document.getElementById("response").innerHTML = points; 
+document.getElementById("response").innerHTML = points;
 
 function myFunction() {
   points.sort(function (a, b) {
