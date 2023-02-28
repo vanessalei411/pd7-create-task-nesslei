@@ -1,4 +1,4 @@
-[
+const toxic = [
   "Acetylated Lanolin",
   "Acetylated Lanolin Alcohol",
   "Algae Extract",
