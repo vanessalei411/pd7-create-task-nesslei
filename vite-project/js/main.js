@@ -94,34 +94,36 @@ const Toxic = [
 ];
 
 function srch() {
-    let userInput = document.getElementById('userInput').value;
-    let inputArr = userInput.split(', ');
-  
-    let foundIngredients = [];
-  
-    for (let i = 0; i < inputArr.length; i++) {
-      for (let j = 0; j < Toxic.length; j++) {
-        if (Toxic[j].toLowerCase().includes(inputArr[i].toLowerCase())) {
-          foundIngredients.push(Toxic[j]);
-        }
+  let userInput = document.getElementById("userInput").value;
+  let inputArr = userInput.split(", ");
+
+  let foundIngredients = [];
+
+  for (let i = 0; i < inputArr.length; i++) {
+    for (let j = 0; j < Toxic.length; j++) {
+      if (Toxic[j].toLowerCase().includes(inputArr[i].toLowerCase())) {
+        foundIngredients.push(Toxic[j]);
       }
     }
-  
-    let outputHTML;
-    if (foundIngredients.length > 0) {
-      outputHTML = '<p>Found ' + foundIngredients.length + ' ingredients that may irritate your skin:</p>';
-      outputHTML += '<ul>';
-      foundIngredients.forEach(function(ingredient) {
-        outputHTML += '<li>' + ingredient + '</li>';
-      });
-      outputHTML += '</ul>';
-    } else {
-      outputHTML = '<p>No harmful ingredients found.</p>';
-    }
-  
-    let outputContainer = document.getElementById('output-container');
-    outputContainer.insertAdjacentHTML('beforeend', outputHTML);
   }
-  
-  document.getElementById('srchBtn').addEventListener('click', srch);
 
+  let outputHTML;
+  if (foundIngredients.length > 0) {
+    outputHTML =
+      "<p>Found " +
+      foundIngredients.length +
+      " ingredients that may irritate your skin:</p>";
+    outputHTML += "<ul>";
+    foundIngredients.forEach(function (ingredient) {
+      outputHTML += "<li>" + ingredient + "</li>";
+    });
+    outputHTML += "</ul>";
+  } else {
+    outputHTML = "<p>No harmful ingredients found.</p>";
+  }
+
+  let outputContainer = document.getElementById("output-container");
+  outputContainer.insertAdjacentHTML("beforeend", outputHTML);
+}
+
+document.getElementById("srchBtn").addEventListener("click", srch);
