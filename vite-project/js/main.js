@@ -1,5 +1,3 @@
-import "../style.css";
-
 const Toxic = [
   "Acetylated Lanolin",
   "Acetylated Lanolin Alcohol",
@@ -95,16 +93,20 @@ const Toxic = [
   "Xylene",
 ];
 
-  function srch() {
-    let userInput = prompt('Enter ingredients:');
+function srch() {
+    let userInput = document.getElementById('userInput').value;
+    let inputArr = userInput.split(', ');
+  
     let foundIngredients = [];
-
-    for (let i = 0; i < toxic.length; i++) {
-      if (toxic[i].includes(userInput)) {
-        foundIngredients.push(toxic[i]);
+  
+    for (let i = 0; i < inputArr.length; i++) {
+      for (let j = 0; j < Toxic.length; j++) {
+        if (Toxic[j].toLowerCase().includes(inputArr[i].toLowerCase())) {
+          foundIngredients.push(Toxic[j]);
+        }
       }
     }
-
+  
     let outputHTML;
     if (foundIngredients.length > 0) {
       outputHTML = '<p>Found ' + foundIngredients.length + ' ingredients that may irritate your skin:</p>';
@@ -116,11 +118,10 @@ const Toxic = [
     } else {
       outputHTML = '<p>No harmful ingredients found.</p>';
     }
-
+  
     let outputContainer = document.getElementById('output-container');
     outputContainer.insertAdjacentHTML('beforeend', outputHTML);
   }
-
+  
   document.getElementById('srchBtn').addEventListener('click', srch);
-
 
