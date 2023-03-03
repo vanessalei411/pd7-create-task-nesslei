@@ -1,31 +1,42 @@
-
-.search {
-  margin-left: 30rem; 
+*, *:before, *:after {
+  vertical-align: baseline; 
+  box-sizing: inherit; 
 }
 
+body {
+  margin: 0; 
+  padding: 0; 
+}
+
+ul {
+  margin: 0; 
+  padding: 0; 
+}
+
+
 nav {
-  background-color: rgba(143,143,143,255);
+  background-color:rgba(102,102,102,255);
 }
 
 nav ul {
-  list-style-type: none;
   padding: 0;
-  overflow: hidden;
-  display: inline-block;
   margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav li {
   display: inline-block;
   margin-right: 10px;
+  font-family: 'Gothic A1', sans-serif;
 }
 
 nav li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+  padding: 14px 16px; 
 }
 
 nav li a:hover {
@@ -35,6 +46,8 @@ nav li a:hover {
 
 .flex-container {
   display: flex;
+  width: 35rem;
+  margin-left: 14.4rem; 
 } 
 
 #output-container {
@@ -50,18 +63,57 @@ nav li a:hover {
 
 h1 {
   text-align: center;
+  font-family: 'Gothic A1', sans-serif;
+}
+
+h3 {
+  font-family: 'Gothic A1', sans-serif;
+}
+
+.description {
+  margin: 0.3 rem 0; 
+  display: block; 
+  margin-block-start: 1 em; 
+  margin-block-end: 1 em; 
+  margin-inline-start: 0px; 
+  margin-inline-end: 0px; 
 }
 
 body {
   background-color: rgba(147,147,147,255);
-  font-family: 'Montserrat', sans-serif;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Source Sans Pro', sans-serif;
 }
 
 a {
   font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.titles {
+  background-color: #fff;
+}
+
+.containers {
+  margin-left: 15rem; 
+}
+
+.toolbar{
+  height: 3rem; 
+  background-color: rgba(45,45,45,255);
+  width: 100%; 
+  top: 0; 
+  left: 0;
+  margin: 0; 
+  padding: 0; 
+  line-height: 3rem; 
+}
+
+.omedo {
+  height: 3rem; 
+  background-color: #fff;
+  width: 100%; 
+  top: 3rem; 
+  left: 0;
+  margin: 0; 
+  padding: 0; 
+  line-height: 3rem; 
+  font-family: 'Gothic A1', sans-serif;
 }
