@@ -1,8 +1,63 @@
-#html {
-  margin: 0%; 
-  
+.random{
+  background-color: #fff;
 }
 
-.bodybody {
-  background: rgba(143,143,143,255) 
+nav {
+  background-color: rgba(143,143,143,255);
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #111;
+}
+
+
+.flex-container {
+  display: flex;
+} 
+
+#output-container {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  flex-basis: 33%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+h1 {
+  text-align: center;
+}
+
+body {
+  background-color: rgba(147,147,147,255);
 }

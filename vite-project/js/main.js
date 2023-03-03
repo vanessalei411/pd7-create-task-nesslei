@@ -95,30 +95,32 @@ const Toxic = [
   "Xylene",
 ];
 
-let userInput = prompt("ingredients: ");
-let found = false;
-const Button = document.querySelector(".search");
+  function srch() {
+    let userInput = prompt('Enter ingredients:');
+    let foundIngredients = [];
 
-async function 
-
-Button.addEventListener("click", () => {
-  if (userInput === "") {
-    console.log("input ingredients");
-  }
-  for (let i = 0; i < userInput.length; i++) {
-    if (Toxic.includes(userInput[i])) {
-      return true;
-    } else { 
-        return false; 
+    for (let i = 0; i < toxic.length; i++) {
+      if (toxic[i].includes(userInput)) {
+        foundIngredients.push(toxic[i]);
+      }
     }
+
+    let outputHTML;
+    if (foundIngredients.length > 0) {
+      outputHTML = '<p>Found ' + foundIngredients.length + ' ingredients that may irritate your skin:</p>';
+      outputHTML += '<ul>';
+      foundIngredients.forEach(function(ingredient) {
+        outputHTML += '<li>' + ingredient + '</li>';
+      });
+      outputHTML += '</ul>';
+    } else {
+      outputHTML = '<p>No harmful ingredients found.</p>';
+    }
+
+    let outputContainer = document.getElementById('output-container');
+    outputContainer.insertAdjacentHTML('beforeend', outputHTML);
   }
 
+  document.getElementById('srchBtn').addEventListener('click', srch);
 
 
-/*
-  if (found) {
-    console.log("+userInput+");
-  } else {
-    console.log("no harmful ingredients");
-  }
-});
