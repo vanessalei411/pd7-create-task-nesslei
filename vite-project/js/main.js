@@ -93,8 +93,7 @@ const Toxic = [
   "Xylene",
 ];
 
-function srch() {
-  let userInput = document.getElementById("userInput").value;
+function search(userInput) {
   let inputArr = userInput.split(", ");
 
   let foundIngredients = [];
@@ -108,22 +107,31 @@ function srch() {
   }
 
   let outputHTML;
+
   if (foundIngredients.length > 0) {
     outputHTML =
-      "<p>Found " +
-      foundIngredients.length +
-      " ingredients that may irritate your skin:</p>";
-    outputHTML += "<ul>";
+      "<p>Found " + foundIngredients.length + " ingredients that may irritate your skin:</p>";
+    outputHTML = outputHTML + "<ul>";
     foundIngredients.forEach(function (ingredient) {
-      outputHTML += "<li>" + ingredient + "</li>";
+      outputHTML = outputHTML + "<li>" + ingredient + "</li>";
     });
-    outputHTML += "</ul>";
+    outputHTML = outputHTML + "</ul>";
   } else {
     outputHTML = "<p>No harmful ingredients found.</p>";
   }
 
   let outputContainer = document.getElementById("output-container");
-  outputContainer.insertAdjacentHTML("beforeend", outputHTML);
+  outputContainer.innerHTML = outputHTML;
 }
 
-document.getElementById("srchBtn").addEventListener("click", srch);
+// Add an event listener to the input field for Enter key press
+document.getElementById("userInput").addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevent the default form submission (if any)
+    search(document.getElementById("userInput").value);
+  }
+});
+
+document.getElementById("srchBtn").addEventListener("click", function () {
+  search(document.getElementById("userInput").value);
+});
